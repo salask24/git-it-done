@@ -96,7 +96,7 @@ var getFeaturedRepos = function(language) {
     fetch(apiUrl).then(function(response) {
       if (response.ok) {
         response.json().then(function(data) {
-          console.log(data)
+          displayRepos(data.items, language);
         });
       } else {
         alert('Error: GitHub User Not Found');
@@ -104,6 +104,6 @@ var getFeaturedRepos = function(language) {
     });
   };
 
-  
+
 // add event listeners to forms
 userFormEl.addEventListener("submit", formSubmitHandler);
